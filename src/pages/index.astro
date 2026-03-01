@@ -1,7 +1,38 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const pageTitle = "Home Page";
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('blog');
+const recentPosts = allPosts
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 6);
 ---
-<BaseLayout pageTitle={pageTitle}>
-  <h2>私の素晴らしいブログのサブタイトル</h2>
+
+<BaseLayout pageTitle="Yoneda" description="Yonedaのブログ">
+  <section class="hero">
+    <h1>Yoneda</h1>
+    <p>暮らしの中で見つけた小さな発見を記録するブログ</p>
+  </section>
+
+  <section class="section">
+    <h2 class="section__title">最新の記事</h2>
+    <div class="post-grid">
+      {recentPosts.map(post => (
+        <a href={`/blog/${post.id}/`} class="post-card">
+          <time datetime={post.data.pubDate.toISOString()}>
+            {post.data.pubDate.toLocaleDateString('ja-JP', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+            })}
+          </time>
+          <h3>{post.data.title}</h3>
+          <p>{post.data.description}</p>
+        </a>
+      ))}
+    </div>
+    <div class="section__more">
+      <a href="/blog/">すべての記事を見る &rarr;</a>
+    </div>
+  </section>
 </BaseLayout>

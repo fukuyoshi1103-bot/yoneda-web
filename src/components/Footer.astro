@@ -1,16 +1,13 @@
 ---
 import Social from './Social.astro';
 ---
-<style>
-  footer {
-    display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
-  }
-</style>
 
-<footer>
-  <Social platform="instagram" username="fukuyoshi111103" />
-  <Social platform="github" username="fukuyoshi1103-bot" />
-  <Social platform="youtube" username="astrodotbuild" />
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <div class="site-footer__social">
+      <Social platform="instagram" username="fukuyoshi111103" />
+      <Social platform="github" username="fukuyoshi1103-bot" />
+    </div>
+    <p class="site-footer__copy">&copy; 2025 Yoneda</p>
+  </div>
 </footer>
