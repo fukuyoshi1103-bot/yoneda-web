@@ -1,6 +1,6 @@
 /* ===== Design Tokens ===== */
 :root {
-  --color-bg: url("src/image/background-color1.jpeg");
+  --color-bg: #FFFDD0;
   --color-text: #1a1a1a;
   --color-text-muted: #666666;
   --color-border: #e5e5e5;
@@ -44,8 +44,7 @@ html {
   line-height: var(--line-height);
   letter-spacing: var(--letter-spacing);
   color: var(--color-text);
-  background-image: var(--color-bg);
-  background-attachment: fixed;
+  background-color: var(--color-bg);
 }
 
 h1,
