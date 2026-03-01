@@ -44,7 +44,8 @@ html {
   line-height: var(--line-height);
   letter-spacing: var(--letter-spacing);
   color: var(--color-text);
-  background-color: var(--color-bg);
+  background-image: var(--color-bg);
+  background-attachment: fixed;
 }
 
 h1,
