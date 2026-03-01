@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C /c/Users/user/yoneda-web/.claude/worktrees/hungry-cray log --oneline -10)",
+      "Bash(npm run build)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(npm install)",
+      "Bash(ls \"C:/Users/user/yoneda-web/.claude/worktrees/hungry-cray/node_modules/.bin/astro\"*)",
+      "Bash(node -e \"console.log\\(require.resolve\\(''astro/cli'', {paths: [''C:/Users/user/yoneda-web/.claude/worktrees/hungry-cray'']}\\)\\)\")",
+      "Bash(node -e \"const p = require\\(''path''\\); const pkg = require\\(p.join\\(''C:/Users/user/yoneda-web/.claude/worktrees/hungry-cray/node_modules/astro'', ''package.json''\\)\\); console.log\\(pkg.bin\\)\")",
+      "Bash(curl -s http://localhost:4321/)",
+      "Bash(curl -s http://localhost:4321/blog/)",
+      "Bash(curl -s http://localhost:4321/blog/first-post/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4321/about/)",
+      "Bash(gh pr:*)",
+      "Bash(where gh)"
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+  pubDate: Date;
+  description: string;
+  author?: string;
+  tags?: string[];
+}
+
+const { title, pubDate, description, author, tags = [] } = Astro.props;
+
+const formattedDate = pubDate.toLocaleDateString('ja-JP', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<BaseLayout pageTitle={title} description={description}>
+  <article class="blog-post">
+    <header class="blog-post__header">
+      <time datetime={pubDate.toISOString()}>{formattedDate}</time>
+      <h1>{title}</h1>
+      {tags.length > 0 && (
+        <div class="blog-post__tags">
+          {tags.map(tag => <span class="tag">{tag}</span>)}
+        </div>
+      )}
+    </header>
+    <div class="blog-post__content">
+      <slot />
+    </div>
+  </article>
+</BaseLayout>
